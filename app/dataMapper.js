@@ -1,4 +1,4 @@
-const client = require("../app/utils/client");
+const pool = require('../utils/client');
 
 const emailjs = require('@emailjs/nodejs');
 
@@ -7,7 +7,7 @@ const dataMapper = {
     homePage: async () => {
         const sql = "SELECT * FROM produits";
 
-        const result = await client.query(sql);
+        const result = await pool.query(sql);
 
         return result.rows;
     },
@@ -15,7 +15,7 @@ const dataMapper = {
     shoppage: async () => {
         const sql = "SELECT * FROM produits";
 
-        const result = await client.query(sql);
+        const result = await pool.query(sql);
 
         return result.rows;
     },
@@ -25,7 +25,7 @@ const dataMapper = {
 
         
 
-        const result = await client.query(sql);
+        const result = await pool.query(sql);
 
         return result.rows[0];
     },
@@ -54,7 +54,7 @@ const dataMapper = {
             const values = [`%${filter}%`];
     
     
-            const result = await client.query(sql, values);
+            const result = await pool.query(sql, values);
             return result.rows;
         } catch (error) {
             
