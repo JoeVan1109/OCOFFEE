@@ -7,6 +7,8 @@
     "test": "echo \"error:no test specified\" && exit 1",
     "dev": "node --watch index.js",
     "sass": "sass --watch ./sass/main.scss:./integration/css/style.css",
+    "build": "npm intall && npm run sass",
+    
     "start": "node index.js"
   },
   "dependencies": {
@@ -25,7 +27,7 @@
   "author": "",
   "license": "ISC",
   "engines": {
-  "node": "20.12.2",
-  "npm": "10.5.0"
+  "node": "18.x",
+  "npm": ">=6.0.0"
 }
 }
