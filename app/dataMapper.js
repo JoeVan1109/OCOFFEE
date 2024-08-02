@@ -1,4 +1,4 @@
-const client = require('./utils/client');
+const client = require('../app/utils/client');
 
 const emailjs = require('@emailjs/nodejs');
 
