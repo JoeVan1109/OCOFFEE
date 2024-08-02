@@ -1,0 +1,24 @@
+@import "./utils/function";
+@import "./utils/mixins";
+@import "./utils/variables";
+
+@import "./base/reset";
+@import "./base/typography";
+
+@import "./layout/footer";
+@import "./layout/header";
+@import "./layout/forms";
+@import "./layout/grid";
+
+
+@import "./components/buttons";
+@import "./components/card";
+@import "./components/menu-deroulant";
+
+
+@import "./pages/home";
+@import "./pages/product";
+@import "./pages/shop";
+@import "./pages/error404";
+@import "./pages/contact";
+

@@ -1,0 +1,22 @@
+.bloc-produit {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    place-items: center;
+
+    
+
+    @media screen and (min-width: 1400px) {
+
+        
+    
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 25px;
+            
+        
+        
+    }
+}
+

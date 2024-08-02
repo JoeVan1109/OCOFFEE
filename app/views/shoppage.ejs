@@ -1,0 +1,93 @@
+<%- include('partials/header.ejs') -%>
+
+<title>Catalogue</title>
+
+<!--!----------------- BLOC-SHOPPAGE ------------------>
+
+<div class="container">
+
+    <div class="bloc-banner">
+        <h1 class="title-shop-page">Notre catalogue</h1>
+    </div>
+
+    <form action="" method="POST" id="filterForm">
+        <div class="bloc-filter">
+            <select class="filter" name="filter" id="menu-filter">
+                <option value="">Tous les produits</option>
+                <option value="Corsé">Corsé</option>
+                <option value="Acide">Acide</option>
+                <option value="Fruité">Fruité</option>
+                <option value="Doux">Doux</option>
+                <option value="Epicé">Epicé</option>
+            </select>
+        </div>
+
+    </form>
+
+    <script>
+        document.getElementById('menu-filter').addEventListener('change', function() {
+            const selectedValue = this.value;
+            const form = document.getElementById('filterForm');
+            form.action = `/shoppage/${selectedValue}`;
+            form.submit();
+        });
+    </script>
+
+
+    <!--!----------------- BLOC-PRODUCT ------------------->
+
+<section class="bloc-produit" id="product-section">
+
+        <% shopPage.forEach((shop, index) => { %>
+            <div class="card-produit <%= index >= 3 ? 'hidden' : '' %>">
+                <img class="img-produit" src="/images/coffees/<%= shop.reference %>.png" alt="img-produit-nouveaute">
+                <h3 class="sous-titre-produit"><%= shop.name %></h3>
+                <p class="text-produit"><%= shop.description %></p>
+                <div class="bloc-card-btn" title="Voir le produit">
+                    <a class="btn-produit" href="/productpage/<%= shop.id %>">Découvrir</a>
+                </div>
+            </div>
+        <% }) %>
+
+
+</section>
+
+<% if (shopPage && shopPage.length > 3) { %>
+    <div class="bloc-btn">
+        <button class="btn" id="view-all-btn">Voir tout</button>
+    </div>
+<% } %>
+
+</div>
+
+<!-- JS pour dire dans quelle situation le hidden de la div card-produit s'annule -->
+<script>
+    // Ecoute du DOM
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Recupération du btn et de la div card-produit
+    const viewAllBtn = document.getElementById('view-all-btn');
+    const hiddenProducts = document.querySelectorAll('.card-produit.hidden');
+
+    // Ecoute du btn au click
+    viewAllBtn.addEventListener('click', function() {
+
+        // Pour chaque produit caché, on le rend visible
+        hiddenProducts.forEach(product => {
+            product.classList.remove('hidden');
+        });
+
+        // On cache le btn une fois qu'il est cliqué
+        viewAllBtn.style.display = 'none';
+    });
+});
+</script>
+
+<!-- Style pour cacher les card produits au dela de 3 produit affiché si le btn "Voir tout" n'est pas cliqué -->
+<style>
+.hidden {
+    display: none;
+}
+</style>
+
+<%- include('partials/footer.ejs') -%>

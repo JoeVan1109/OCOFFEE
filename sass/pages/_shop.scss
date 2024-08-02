@@ -1,0 +1,33 @@
+.bloc-banner {
+
+    width: 100%;
+    height: 50vh;
+
+    background-image: url(../images/coffees/100955890.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    
+    
+
+    .title-shop-page {
+
+        font-family: "Kalam", cursive;
+
+        text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+        
+
+        color: white;
+
+        font-size: 3rem;
+
+    }
+
+
+}

@@ -1,0 +1,49 @@
+<%- include('partials/header.ejs') -%>
+
+<head>
+<title>Contact Form</title>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init({
+            publicKey: "a8-nOCm7EdVsK94Kx",
+        });
+    })();
+</script>
+<script type="text/javascript">
+    window.onload = function() {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // these IDs from the previous steps
+            emailjs.sendForm('service_k66lzdk', 'template_dfpwiaj', this)
+                .then(() => {
+                    console.log('SUCCESS!');
+                    alert('Nous avons bien reçu votre message !');
+                }, (error) => {
+                    console.log('FAILED...', error);
+                });
+        });
+    }
+</script>
+</head>
+<body>
+
+    <div class="container-contact">
+        <form id="contact-form">
+            <!-- To simplify the tutorial, the value is static. -->
+            <input type="hidden" name="contact_number" value="697483">
+            <label class="item-form">Name</label>
+            <input class="champ-form" type="text" name="user_name" required>
+            <label class="item-form">Email</label>
+            <input class="champ-form" type="email" name="user_email" required>
+            <label class="item-form">Message</label>
+            <textarea class="champ-form-message" name="message" required></textarea>
+
+            
+                <input class="btn-contact" type="submit" value="Send">
+            
+        </form>
+    </div>
+
+<%- include('partials/footer.ejs') %>

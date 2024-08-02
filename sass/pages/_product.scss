@@ -1,0 +1,112 @@
+.container-product {
+
+    font-family: "Mulish", sans-serif;
+    color: $light-brown;
+
+    .bloc-product {
+
+        width: 100%;
+
+        .card-product {
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .img-product{
+    
+                width: 100%;
+                max-height: 50rem;
+        
+                object-fit: cover;
+        
+            }
+            .bloc-text-product{
+        
+                box-sizing: border-box;
+        
+                width: 85%;
+        
+                margin: 20px;
+                padding: 20px;
+        
+                background-color: $yellow;
+        
+                border-radius: 10px;
+        
+                
+        
+                .date-publication{
+        
+                    text-align: end;
+            
+                }
+                .title-product{
+
+                    font-weight: 900;
+        
+                    margin: 15px 0 25px 0;
+                
+                }
+                
+                .unite-product {
+
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    .sous-title-product {
+                        margin-bottom: 15px;
+                        font-weight: 900;
+                    }
+
+                    .text-product{
+                        margin-bottom: 15px;
+                    }
+                }
+            
+            }
+        }
+    
+        
+        
+    
+        
+    }
+
+    @media screen and (min-width: 1400px) {
+    
+            .bloc-product {
+    
+                
+            
+
+                .card-product {
+
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+
+                    .img-product {
+    
+                        width: 40%;
+                        max-height: 30rem;
+
+                        margin-top: 50px;
+
+                        border-radius: 10px;
+                    }
+            
+                    .bloc-text-product {
+                        width: 40%;
+                    }
+                }
+    
+                
+            }
+    
+            
+        }
+
+
+}

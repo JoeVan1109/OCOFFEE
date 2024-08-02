@@ -1,0 +1,50 @@
+<%- include('partials/header.ejs') -%>
+
+<title>Page d'accueil</title>
+
+<!--!----------------- BLOC-HOMEPAGE------------------>
+
+<div class="container">
+
+    <!--*---------------- BLOC-PRESENTATION------------------>
+    
+                <section class="bloc-presentation">
+    
+                    <img class="img-presentation" src=".\images\about.jpg" alt="img-presentation">
+    
+                    <div class="sous-bloc-left">
+                        <h1 class="titre-presentation">O'Coffee</h1>
+                        <p class="text-presentation">Chez O'Coffee, nous sommes passionnés par l'art du café. Situés au cœur de régions productrices renommées, nous sélectionnons avec soin des grains de café de haute qualité, cultivés de manière éthique et durable. Notre objectif est de vous offrir une expérience café exceptionnelle, directement à votre porte.</p>
+                        
+                        <div class="bloc-btn" title="Voir notre catalogue">
+                            <a class="btn" href="/shoppage">Voir notre catalogue</a>
+                        </div>
+    
+                    </div>
+    
+                </section>
+    
+    <!--*---------------- BLOC-PRESENTATION------------------>
+    
+                <h2 class="titre-nouveautees">Nouveautés</h2>
+
+
+                <section class="bloc-produit">
+                    <% for (let i = 0; i < 3 && i < homePage.length; i++) { %>
+                        <% const product = homePage[i]; %>
+                        <div class="card-produit">
+                            <img class="img-produit" src="./images/coffees/<%= product.reference %>.png" alt="img-produit-nouveaute">
+                            <h3 class="sous-titre-produit"><%= product.name %></h3>
+                            <p class="text-produit"><%= product.description %></p>
+                            <div class="bloc-card-btn" title="Voir le produit">
+                                <a class="btn-produit" href="/productpage/<%= product.id %>">Découvrir</a>
+                            </div>
+                        </div>
+                    <% } %>
+                </section>
+    
+            </div>
+    
+
+
+<%- include('partials/footer.ejs') -%>

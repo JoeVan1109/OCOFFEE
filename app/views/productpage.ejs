@@ -1,0 +1,62 @@
+<%- include('partials/header.ejs') -%>
+
+<title><%= product.name %></title>
+
+<!--!----------------- BLOC-PRODUCT ------------------>
+
+<div class="container-product">
+
+    <section class="bloc-product">
+
+        <div class="card-product">
+
+            <img class="img-product" src="/images/coffees/<%= product.reference %>.png" alt="product">
+
+            <div class="bloc-text-product">
+
+                <p class="date-publication">Publié le 25/02/2022</p>
+
+                <h1 class="title-product"><%= product.name %></h1>
+
+                <div class="unite-product">
+                    <p class="sous-title-product">Description : </p>
+                    <p class="text-product"><%= product.description %></p>
+                </div>
+
+                <div class="unite-product">
+                    <p class="sous-title-product">Référence : </p>
+                    <p class="text-product"><%= product.reference %></p>
+                </div>
+
+                <div class="unite-product">
+                    <p class="sous-title-product">Origine : </p>
+                    <p class="text-product"><%= product.origine %></p>
+                </div>
+
+                <div class="unite-product">
+                    <p class="sous-title-product">Type : </p>
+                    <p class="text-product"><%= product.type %></p>
+                </div>
+
+                <div class="unite-product">
+                    <p class="sous-title-product">Prix : </p>
+                    <p class="text-product"><%= product.price %> €</p>
+                </div>
+
+                <div class="unite-product">
+                    <p class="sous-title-product">Disponibilité : </p>
+                    <p class="text-product"><%= product.disponibilite %></p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="bloc-btn">
+            <a class="btn" href="/shoppage">Catalogue</a>
+        </div>
+
+    </section>
+
+</div>
+
+<%- include('partials/footer.ejs') -%>
