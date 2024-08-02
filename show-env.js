@@ -1,1 +1,1 @@
-console.log('DATABASE_URL:', process.env.DATABASE_URL);
+console.log('DB_URL:', process.env.DB_URL);

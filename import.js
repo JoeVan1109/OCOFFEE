@@ -1,9 +1,9 @@
 const { exec } = require('child_process');
 
-const dbUrl = process.env.DATABASE_URL;
+const dbUrl = process.env.DB_URL;
 
 if (!dbUrl) {
-    console.error('DATABASE_URL is not defined');
+    console.error('DB_URL is not defined');
     process.exit(1);
 }
 
