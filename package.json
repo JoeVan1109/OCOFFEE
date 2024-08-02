@@ -6,10 +6,7 @@
   "scripts": {
     "test": "echo \"error:no test specified\" && exit 1",
     "dev": "node --watch index.js",
-    "sass": "sass --watch ./sass/main.scss:./integration/css/style.css",
-    "build": "npm intall && npm run sass",
-    
-    "start": "node index.js"
+    "sass": "sass --watch ./sass/main.scss:./integration/css/style.css"
   },
   "dependencies": {
     "@emailjs/nodejs": "^4.0.4",
@@ -25,9 +22,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "engines": {
-  "node": "18.x",
-  "npm": ">=6.0.0"
-}
+  "license": "ISC"
 }
