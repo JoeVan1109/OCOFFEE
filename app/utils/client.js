@@ -1,7 +1,11 @@
 const { Client } = require('pg');
 
-const client = new Client(process.env.DB_URL);
+const client = new Client({
+    connectionString: process.env.DB_URL
+});
 
-client.connect();
+client.connect()
+    .then(() => console.log('Connected to the database'))
+    .catch(err => console.error('Connection error', err.stack));
 
 module.exports = client;

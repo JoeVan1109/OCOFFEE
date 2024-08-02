@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"error:no test specified\" && exit 1",
     "dev": "node --watch index.js",
-    "sass": "sass --watch ./sass/main.scss:./integration/css/style.css"
+    "sass": "sass --watch ./sass/main.scss:./integration/css/style.css",
+    "start": "node index.js"
   },
   "dependencies": {
     "@emailjs/nodejs": "^4.0.4",
