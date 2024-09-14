@@ -51,7 +51,10 @@ table {
   border-spacing: 0;
 }
 
-.container-footer {
+footer .container-footer {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,23 +64,23 @@ table {
   border-radius: 64% 36% 0 0/34% 29% 71% 66%;
   color: #D7CCC8;
 }
-.container-footer .logo-footer {
+footer .container-footer .logo-footer {
   width: 80px;
 }
-.container-footer .text-logo-footer {
+footer .container-footer .text-logo-footer {
   font-family: "Kalam", cursive;
   font-size: 20px;
   margin-bottom: 15px;
 }
-.container-footer .adress {
+footer .container-footer .adress {
   font-family: "Mulish", sans-serif;
   margin-bottom: 10px;
 }
-.container-footer .code-postal {
+footer .container-footer .code-postal {
   font-family: "Mulish", sans-serif;
   margin-bottom: 10px;
 }
-.container-footer .ville {
+footer .container-footer .ville {
   font-family: "Mulish", sans-serif;
   margin-bottom: 10px;
 }
@@ -93,7 +96,7 @@ header {
 }
 header .bandeau {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   top: 0;
   width: 100%;
   max-height: 100px;
@@ -443,33 +446,44 @@ header .burger-icon span {
   font-size: 30em;
 }
 
-.container-contact {
+html, body {
+  margin: 0;
+  overflow-x: hidden;
+  height: 100%;
   display: flex;
-  align-items: center;
-  height: 58vh;
+  flex-direction: column;
+  min-height: 100vh;
 }
-.container-contact #contact-form {
+html .container-contact, body .container-contact {
+  flex: 1 0 auto;
+  box-sizing: border-box;
+}
+html .container-contact .bloc-contact, body .container-contact .bloc-contact {
+  margin: 10px 10px 50px 10px;
+  box-sizing: border-box;
+}
+html .container-contact .bloc-contact #contact-form, body .container-contact .bloc-contact #contact-form {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.container-contact #contact-form .item-form {
+html .container-contact .bloc-contact #contact-form .item-form, body .container-contact .bloc-contact #contact-form .item-form {
   font-family: "Mulish", sans-serif;
   color: #795548;
   margin: 25px 0 25px 0;
 }
-.container-contact #contact-form .champ-form {
+html .container-contact .bloc-contact #contact-form .champ-form, body .container-contact .bloc-contact #contact-form .champ-form {
   width: 90%;
   height: 25px;
   color: #795548;
 }
-.container-contact #contact-form .champ-form-message {
+html .container-contact .bloc-contact #contact-form .champ-form-message, body .container-contact .bloc-contact #contact-form .champ-form-message {
   width: 90%;
   height: 70px;
   color: #795548;
 }
-.container-contact #contact-form .btn-contact {
+html .container-contact .bloc-contact #contact-form .btn-contact, body .container-contact .bloc-contact #contact-form .btn-contact {
   width: 30%;
   height: 40px;
   border-radius: 10px;
@@ -479,19 +493,19 @@ header .burger-icon span {
   font-family: "Mulish", sans-serif;
   color: #D7CCC8;
 }
-.container-contact #contact-form .btn-contact:active {
+html .container-contact .bloc-contact #contact-form .btn-contact:active, body .container-contact .bloc-contact #contact-form .btn-contact:active {
   background-color: #D7CCC8;
   color: #795548;
   border: 2px solid #795548;
 }
 @media screen and (min-width: 1400px) {
-  .container-contact #contact-form .champ-form {
+  html .container-contact .bloc-contact #contact-form .champ-form, body .container-contact .bloc-contact #contact-form .champ-form {
     width: 40%;
   }
-  .container-contact #contact-form .champ-form-message {
+  html .container-contact .bloc-contact #contact-form .champ-form-message, body .container-contact .bloc-contact #contact-form .champ-form-message {
     width: 40%;
   }
-  .container-contact #contact-form .btn-contact {
+  html .container-contact .bloc-contact #contact-form .btn-contact, body .container-contact .bloc-contact #contact-form .btn-contact {
     width: 15%;
   }
 }

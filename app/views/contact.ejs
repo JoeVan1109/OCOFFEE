@@ -1,6 +1,11 @@
-<%- include('partials/header.ejs') -%>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/css/style.css">
 <title>Contact Form</title>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script type="text/javascript">
@@ -29,21 +34,25 @@
 </head>
 <body>
 
-    <div class="container-contact">
-        <form id="contact-form">
-            <!-- To simplify the tutorial, the value is static. -->
-            <input type="hidden" name="contact_number" value="697483">
-            <label class="item-form">Name</label>
-            <input class="champ-form" type="text" name="user_name" required>
-            <label class="item-form">Email</label>
-            <input class="champ-form" type="email" name="user_email" required>
-            <label class="item-form">Message</label>
-            <textarea class="champ-form-message" name="message" required></textarea>
+    <%- include('partials/header.ejs') -%>
 
-            
-                <input class="btn-contact" type="submit" value="Send">
-            
-        </form>
-    </div>
+    <main class="container-contact">
+        <section class="bloc-contact">
+            <form id="contact-form">
+                <!-- To simplify the tutorial, the value is static. -->
+                <input type="hidden" name="contact_number" value="697483">
+                <label class="item-form">Name</label>
+                <input class="champ-form" type="text" name="user_name" required>
+                <label class="item-form">Email</label>
+                <input class="champ-form" type="email" name="user_email" required>
+                <label class="item-form">Message</label>
+                <textarea class="champ-form-message" name="message" required></textarea>
+    
+                
+                    <input class="btn-contact" type="submit" value="Send">
+                
+            </form>
+        </section>
+    </main>
 
 <%- include('partials/footer.ejs') %>

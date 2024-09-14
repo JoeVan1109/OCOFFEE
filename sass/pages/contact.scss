@@ -1,81 +1,97 @@
-.container-contact {
+html, body {
+    margin: 0;
+    overflow-x: hidden;
+    height: 100%;
 
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
 
-    height: 58vh;
+    .container-contact {
 
-    #contact-form {
+        flex: 1 0 auto;
 
-        width: 100%;
+        box-sizing: border-box;
+    
+        .bloc-contact {
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+            margin: 10px 10px 50px 10px;
 
-        .item-form{
-            font-family: "Mulish", sans-serif;
-            color: $light-brown;
+            box-sizing: border-box;
 
-            margin: 25px 0 25px 0;
-        }
-
-        .champ-form {
-            width: 90%;
-            height: 25px;
-
-            color: $light-brown;
-        }
-
-        .champ-form-message {
-            width:90%;
-            height: 70px;
-
-            color: $light-brown;
-        }
-
-        .btn-contact{
-
-            width: 30%;
-            height: 40px;
-
-            border-radius: 10px;
-            border: none;
-
-            background-color: $light-brown;
-
-            margin-top: 20px;
-
-            font-family: "Mulish", sans-serif;
-            color: $grey;
-
-            
-        }
-
-        .btn-contact:active {
-            
-            background-color: $grey;
-
-            color: $light-brown;
-
-            border: 2px solid $light-brown;
-        }
-
-        @media screen and (min-width: 1400px) {
-
-            .champ-form {
-                width: 40%;
+            #contact-form {
+    
+                width: 100%;
+        
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+        
+                .item-form{
+                    font-family: "Mulish", sans-serif;
+                    color: $light-brown;
+        
+                    margin: 25px 0 25px 0;
+                }
+        
+                .champ-form {
+                    width: 90%;
+                    height: 25px;
+        
+                    color: $light-brown;
+                }
+        
+                .champ-form-message {
+                    width:90%;
+                    height: 70px;
+        
+                    color: $light-brown;
+                }
+        
+                .btn-contact{
+        
+                    width: 30%;
+                    height: 40px;
+        
+                    border-radius: 10px;
+                    border: none;
+        
+                    background-color: $light-brown;
+        
+                    margin-top: 20px;
+        
+                    font-family: "Mulish", sans-serif;
+                    color: $grey;
+        
+                    
+                }
+        
+                .btn-contact:active {
+                    
+                    background-color: $grey;
+        
+                    color: $light-brown;
+        
+                    border: 2px solid $light-brown;
+                }
+        
+                @media screen and (min-width: 1400px) {
+        
+                    .champ-form {
+                        width: 40%;
+                    }
+        
+                    .champ-form-message {
+                        width: 40%;
+                    }
+        
+                    .btn-contact {
+                        width: 15%;
+                    }
+        
+                }
             }
-
-            .champ-form-message {
-                width: 40%;
-            }
-
-            .btn-contact {
-                width: 15%;
-            }
-
         }
+    
     }
-
 }
