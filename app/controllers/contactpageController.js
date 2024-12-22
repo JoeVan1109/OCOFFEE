@@ -1,4 +1,5 @@
-const dataMapper = require("../dataMapper");
+import dataMapper from '../dataMapper.js';
+
 
 const contactpageController = {
     renderEmailForm: (req, res) => {
@@ -18,4 +19,4 @@ const contactpageController = {
     }
 }
 
-module.exports = contactpageController;
+export default contactpageController;

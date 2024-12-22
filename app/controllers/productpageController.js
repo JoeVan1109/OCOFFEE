@@ -1,4 +1,4 @@
-const dataMapper = require("../dataMapper");
+import dataMapper from '../dataMapper.js';
 
 const productpageController = {
     productPage: async (req, res) => {
@@ -32,4 +32,4 @@ const productpageController = {
     }
 }
 
-module.exports = productpageController;
+export default productpageController;

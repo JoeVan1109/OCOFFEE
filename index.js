@@ -1,27 +1,22 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
-const path = require('path');
-
-const express = require('express');
-
-const router = require('./app/router');
+import path from 'path';
+import express from 'express';
+import router from './app/router.js';
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-
-
 // Configuration de notre moteur de templates
-app.set("views", path.join(__dirname, "app", "views"));
+app.set("views", path.join("app", "views"));
 app.set("view engine", "ejs");
 
 // servir les fichiers statiques qui sont dans "integration"
-
 app.use(express.static("integration"));
 
 app.use(express.urlencoded({ extended: true }));
-
 
 app.use(router);
 

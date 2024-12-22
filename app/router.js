@@ -1,9 +1,8 @@
-const express = require('express');
-const homepageController = require('./controllers/homepageController');
-const shoppageController = require('./controllers/shopPageController');
-const productpageController = require('./controllers/productpageController');
-const contactpageController = require('./controllers/contactpageController');
-
+import express from 'express';
+import homepageController from './controllers/homepageController.js';
+import shoppageController from './controllers/shopPageController.js';
+import productpageController from './controllers/productpageController.js';
+import contactpageController from './controllers/contactpageController.js';
 
 const router = express.Router();
 
@@ -17,5 +16,4 @@ router.post('/shoppage/:filter', shoppageController.categoryPage);
 
 router.get('/productpage/:id', productpageController.productPage);
 
-
-module.exports = router;
+export default router;

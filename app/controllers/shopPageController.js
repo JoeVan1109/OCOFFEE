@@ -1,4 +1,5 @@
-const dataMapper = require("../dataMapper");
+import dataMapper from '../dataMapper.js';
+
 
 const shoppageController = {
 
@@ -31,4 +32,4 @@ const shoppageController = {
 }
 
 
-module.exports = shoppageController;
+export default shoppageController;

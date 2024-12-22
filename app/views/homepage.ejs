@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<%- include('partials/header.ejs') -%>
+<%- include('partials/header') %>
 
 <title>Page d'accueil</title>
 
@@ -35,26 +35,3 @@
                 </section>
     
     <!--*---------------- BLOC-PRESENTATION------------------>
-    
-                <h2 class="titre-nouveautees">Nouveautés</h2>
-
-
-                <section class="bloc-produit">
-                    <% for (let i = 0; i < 3 && i < homePage.length; i++) { %>
-                        <% const product = homePage[i]; %>
-                        <div class="card-produit">
-                            <img class="img-produit" src="./images/coffees/<%= product.reference %>.png" alt="img-produit-nouveaute">
-                            <h3 class="sous-titre-produit"><%= product.name %></h3>
-                            <p class="text-produit"><%= product.description %></p>
-                            <div class="bloc-card-btn" title="Voir le produit">
-                                <a class="btn-produit" href="/productpage/<%= product.id %>">Découvrir</a>
-                            </div>
-                        </div>
-                    <% } %>
-                </section>
-    
-            </div>
-    
-
-
-<%- include('partials/footer.ejs') -%>
