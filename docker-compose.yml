@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  ocoffee:
+    build: .
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATABASE_URL=postgres://ocoffeeadmin:ocofffee@db:5432/ocoffee
+    depends_on:
+      - db
+    networks:
+      - db-network
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: ocoffeeadmin
+      POSTGRES_PASSWORD: ocofffee
+      POSTGRES_DB: ocoffee
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/ocoffeebd.sql:/docker-entrypoint-initdb.d/ocoffeebd.sql
+    networks:
+      - db-network
+
+  adminer:
+    image: adminer
+    ports:
+      - "8081:8080"
+    networks:
+      - db-network
+
+volumes:
+  postgres_data:
+
+networks:
+  db-network:
